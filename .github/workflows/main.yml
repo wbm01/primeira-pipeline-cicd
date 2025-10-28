@@ -22,5 +22,5 @@ jobs:
           push: true
           tags: |
             willianmarioti/primeira-pipeline:latest
-            willianmarioti/primeira-pipeline:${{ github.run_number }}
+            willianmarioti/primeira-pipeline:v${{ github.run_number }}
       
