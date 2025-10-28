@@ -23,4 +23,11 @@ jobs:
           tags: |
             willianmarioti/primeira-pipeline:latest
             willianmarioti/primeira-pipeline:v${{ github.run_number }}
+  CD:
+    runs-on: ubuntu-latest
+    needs: [CI]
+    steps:
+      - name: Obtendo o código
+        uses: actions/checkout@v5.0.0
+      - name: Configuração de Contexto do Kubernetes
       
