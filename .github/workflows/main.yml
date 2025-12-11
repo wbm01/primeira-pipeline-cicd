@@ -28,5 +28,5 @@ jobs:
     uses: wbm01/primeira-pipeline-cicd/.github/workflows/deploy.yaml@main
     with:
       manifests: k8s/deployment.yaml
-      images: willianmarioti/primeira-pipeline:v${{github.run_number}}
+      images: willianmarioti/primeira-pipeline:v${{ github.run_number }}
     secrets: inherit
