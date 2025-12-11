@@ -1,0 +1,28 @@
+name: Deploy no Kubernertes
+on:
+    workflow_call:
+        inputs:
+            manifests:
+                type: string
+                required: true
+                description: "Arquivos de manifesto para deploy"
+            imagens:
+                type: string
+                required: true
+                description: "Imagens que serão alteradas nos manifestos"        
+jobs:
+    deploy-k8s:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Obtendo o código
+          uses: actions/checkout@v5.0.0
+        - name: Configuração de Contexto do Kubernetes
+          uses: azure/k8s-set-context@v4
+          with:
+            method: kubeconfig
+            kubeconfig: ${{ secrets.K8S_CONFIG }}
+        - name: Execução do Manifesto
+          uses: Azure/k8s-deploy@v5
+          with:
+            manifests: ${{inputs.manifests}}
+            images: ${{inputs.imagens}}
