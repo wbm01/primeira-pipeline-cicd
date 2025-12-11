@@ -6,7 +6,7 @@ on:
                 type: string
                 required: true
                 description: "Arquivos de manifesto para deploy"
-            imagens:
+            images:
                 type: string
                 required: true
                 description: "Imagens que serão alteradas nos manifestos"        
