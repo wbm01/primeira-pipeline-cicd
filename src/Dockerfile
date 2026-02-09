@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 golang:1.22.0-alpine3.19 as builder
+FROM --platform=linux/arm64 golang:1.22.0-alpine3.19 as builder
 WORKDIR /build 
 COPY . .
 RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -o app 
