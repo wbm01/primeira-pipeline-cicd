@@ -37,7 +37,7 @@ jobs:
     environment: homologacao
     steps:
       - name: Fake Teste
-        run: "Fake testes de ambiente ${{vars.APP_NAMESPACE}}"
+        run: echo "Fake testes de ambiente ${{vars.APP_NAMESPACE}}"
 
   CD-Producao:
     needs: [CI]
