@@ -36,7 +36,7 @@ jobs:
 
   Teste-Ambiente:
     needs: [CD-Homolog]
-    runs-on: Ubuntu
+    runs-on: ubuntu-latest
     environment: homologacao
     steps:
       - name: Fake Teste

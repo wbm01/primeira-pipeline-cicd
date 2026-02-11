@@ -1,7 +1,7 @@
 FROM golang:1.22.0-alpine3.19 as builder
 WORKDIR /build 
 COPY . .
-RUN CGO_ENABLED=0 GOOS=linux GOARCH=arm64 go build -o app .
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=$TARGETARCH go build -o app .
  
 FROM alpine:3.19 as final
 RUN adduser --uid 1000 --disabled-password appuser
