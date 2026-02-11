@@ -3,6 +3,15 @@ on:
   push:
   workflow_dispatch:
 jobs:
+  LOGS:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Adicionando mensagens de log
+        run: |
+          echo "::debug:: Mensagem de Log Debug"
+          echo "::warning:: Mensagem de Log Warning"
+          echo "::notice:: Mensagem de Log Notice"
+          echo "::error:: Mensagem de Log Errpr executado por ${{github.actor}}"
   CI:
     runs-on: ubuntu-latest
     steps: 
