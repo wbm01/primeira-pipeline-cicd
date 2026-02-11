@@ -12,6 +12,10 @@ jobs:
           echo "::warning:: Mensagem de Log Warning"
           echo "::notice:: Mensagem de Log Notice"
           echo "::error:: Mensagem de Log Errpr executado por ${{github.actor}}"
+          echo "::group:: Grupo de Logs"
+          echo "Informação 1"
+          echo "Informação 2"
+          echo "::endgroup::"
   CI:
     runs-on: ubuntu-latest
     steps: 
